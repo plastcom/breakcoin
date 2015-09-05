@@ -352,10 +352,10 @@ bool IsStandardTx(const CTransaction& tx, string& reason)
     unsigned int nDataOut = 0;
     txnouttype whichType;
     BOOST_FOREACH(const CTxOut& txout, tx.vout) {
-        if (!::IsStandard(txout.scriptPubKey, whichType)) {
+        /*if (!::IsStandard(txout.scriptPubKey, whichType)) {
             reason = "scriptpubkey";
             return false;
-        }
+        }*/
         if (whichType == TX_NULL_DATA)
             nDataOut++;
         if (txout.nValue == 0) {
